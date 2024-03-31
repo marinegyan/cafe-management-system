@@ -1,4 +1,4 @@
-package com.aca.cafemanagementsystem.repository;
+package com.aca.cafemanagementsystem.dao;
 
 import com.aca.cafemanagementsystem.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;

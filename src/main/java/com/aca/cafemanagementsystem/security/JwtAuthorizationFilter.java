@@ -1,7 +1,7 @@
 package com.aca.cafemanagementsystem.security;
 
 import com.aca.cafemanagementsystem.model.User;
-import com.aca.cafemanagementsystem.repository.UserRepository;
+import com.aca.cafemanagementsystem.dao.UserRepository;
 import com.aca.cafemanagementsystem.utils.JwtUtils;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.jsonwebtoken.Claims;
@@ -11,7 +11,6 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -20,8 +19,6 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import javax.naming.AuthenticationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 

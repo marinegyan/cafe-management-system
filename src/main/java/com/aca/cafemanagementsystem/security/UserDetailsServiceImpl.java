@@ -1,8 +1,7 @@
 package com.aca.cafemanagementsystem.security;
 
 import com.aca.cafemanagementsystem.model.User;
-import com.aca.cafemanagementsystem.repository.UserRepository;
-import org.springframework.boot.autoconfigure.security.SecurityProperties;
+import com.aca.cafemanagementsystem.dao.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
