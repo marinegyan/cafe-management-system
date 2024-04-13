@@ -7,13 +7,14 @@ import org.springframework.stereotype.Component;
 
 import javax.naming.AuthenticationException;
 import java.time.Instant;
+import java.util.Base64;
 import java.util.Date;
 import java.util.List;
 
 
 @Component
 public class JwtUtils {
-    private final String secret_key = "123";
+    private final String secret_key = Base64.getEncoder().encodeToString("1123".getBytes());
 
     private final JwtParser jwtParser;
 

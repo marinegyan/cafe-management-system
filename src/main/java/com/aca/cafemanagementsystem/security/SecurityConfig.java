@@ -28,6 +28,7 @@ public class SecurityConfig {
     public SecurityConfig(@Qualifier("userDetailsServiceImpl") UserDetailsService customUserDetailsService, JwtAuthorizationFilter jwtAuthorizationFilter) {
         this.userDetailsService = customUserDetailsService;
 
+
         this.jwtAuthorizationFilter = jwtAuthorizationFilter;
     }
 
@@ -42,7 +43,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 
         http.csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll().anyRequest().authenticated())
+                .authorizeHttpRequests(auth -> auth.requestMatchers("/**").permitAll().anyRequest().authenticated())
                 .addFilterBefore(jwtAuthorizationFilter, UsernamePasswordAuthenticationFilter.class)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
         return http.build();
