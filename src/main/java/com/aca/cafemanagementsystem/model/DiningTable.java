@@ -11,9 +11,11 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
-public class Table {
+@jakarta.persistence.Table(name = "dining_table")
+public class DiningTable  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false, unique=true)
     private Long id;
 
     @Column(name = "table_number")
@@ -26,7 +28,7 @@ public class Table {
     private boolean occupied;
 
     @OneToMany(mappedBy = "table")
-    private List<Order> orders = new ArrayList<>();
+    private List<Orders> orders = new ArrayList<>();
 }
 
 

@@ -1,12 +1,13 @@
 package com.aca.cafemanagementsystem.service;
 
-import com.aca.cafemanagementsystem.model.Table;
+import com.aca.cafemanagementsystem.dto.TableDto;
+import com.aca.cafemanagementsystem.model.DiningTable ;
 
 import java.util.List;
 
 public interface TableService {
-    Table createTable(Table table);
-    Table deleteTable(Table table);
-    List<Table> getAllTables();
-    Table getTableById(Long tableId);
+
+    List<DiningTable > getAllTables();
+
+    DiningTable  getTableByNumber(int tableNumber);
 }

@@ -7,24 +7,18 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class Order {
+@jakarta.persistence.Table(name = "orders")
+public class Orders {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", updatable = false, nullable = false, unique=true)
     private Long id;
-
-
-    @Column(name = "table_number")
-    private int tableNumber;
 
     @Column(name = "status")
     private String status;
 
     @ManyToOne
-    @JoinColumn(name = "table_id", nullable = false)
-    Table table;
-
-    @ManyToOne
-    @JoinColumn(name = "waiter_id")
-    private User user;
+    @JoinColumn(name = "table_number", nullable = false)
+    DiningTable  table;
 
 }

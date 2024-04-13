@@ -1,20 +1,19 @@
 package com.aca.cafemanagementsystem.service;
 
+import com.aca.cafemanagementsystem.dto.*;
+import com.aca.cafemanagementsystem.exceptions.InvalidUsernamePasswordException;
 import org.springframework.http.ResponseEntity;
 
 import java.util.Map;
 
 public interface UserService {
-    ResponseEntity<String> signup(Map<String, String> requestMap);
+    UserRegistrationResponseDto signup(UserRegistrationRequestDto userRegistrationRequestDto);
 
-    ResponseEntity<String> login(Map<String, String> requestMap);
+    UserLoginResponseDto login(UserLoginRequestDto userLoginRequestDto) throws InvalidUsernamePasswordException;
 
-    ResponseEntity<String> update(Map<String, String> requestMap);
+    ResponseEntity<String> update(UserUpdateDto userUpdateDto);
 
-    ResponseEntity<String> checkToken();
-
-    ResponseEntity<String> changePassword(Map<String, String> requestMap);
-
-    ResponseEntity<String> forgotPassword(Map<String, String> requestMap);
+    ResponseEntity<String> changePassword(UserChangePasswordDto userChangePasswordDto);
+    ManagerCredentialsDto createManagerCredentials();
 
 }
